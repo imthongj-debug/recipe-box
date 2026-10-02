@@ -1,0 +1,13 @@
+{
+  "name": "recipe-box",
+  "version": "1.0.0",
+  "description": "Mini Project: Recipe Box using Node.js, Express.js, REST API and HTML/CSS/JavaScript",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "node --watch main.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

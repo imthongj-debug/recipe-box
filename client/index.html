@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Box — รวมสูตรอาหารอร่อย ๆ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#home"><span>🍳</span> Recipe Box</a>
+      <nav class="desktop-nav">
+        <a href="#recipes">สูตรอาหาร</a>
+        <a href="#categories">หมวดหมู่</a>
+        <a href="#how">วิธีใช้งาน</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+      </nav>
+      <button class="btn btn-dark nav-add" id="navAddBtn">＋ เพิ่มสูตรอาหาร</button>
+      <button class="menu-btn" id="menuBtn" aria-label="เปิดเมนู">☰</button>
+    </div>
+    <div class="mobile-nav container" id="mobileNav">
+      <a href="#recipes">สูตรอาหาร</a><a href="#categories">หมวดหมู่</a><a href="#how">วิธีใช้งาน</a><a href="#faq">คำถามที่พบบ่อย</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>✦</span> ผู้ช่วยคู่ครัวสำหรับทุกวัน</div>
+          <h1>ทำอาหาร <em>อร่อยๆ</em> ได้ทุกวัน</h1>
+          <p>ค้นพบสูตรอาหารทำง่าย เก็บสูตรโปรด และเปลี่ยนวัตถุดิบในครัวให้เป็นมื้ออร่อยที่อยากแบ่งปัน</p>
+          <div class="hero-actions">
+            <a href="#recipes" class="btn btn-dark btn-lg">ดูสูตรอาหาร <span>→</span></a>
+            <button class="btn btn-light btn-lg" id="heroAddBtn">＋ เพิ่มสูตรอาหารของคุณ</button>
+          </div>
+          <div class="hero-trust"><span>★</span> สูตรทำง่าย · วัตถุดิบหาง่าย · เหมาะสำหรับทำกินที่บ้าน</div>
+        </div>
+        <div class="hero-art">
+          <div class="blob blob-one"></div><div class="blob blob-two"></div>
+          <div class="food-orbit orbit-a">🌿</div><div class="food-orbit orbit-b">🍋</div>
+          <div class="hero-dish"><div class="dish-shadow"></div><div class="plate">🍝</div></div>
+          <div class="floating-card card-top"><span class="mini-icon">⭐</span><div><strong>4.9/5</strong><small>เมนูโปรดของคนทำอาหารที่บ้าน</small></div></div>
+          <div class="floating-card card-bottom"><span class="mini-icon">⏱</span><div><strong>20 min</strong><small>ทำง่าย ใช้เวลาไม่นาน</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section" id="recipes">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="kicker">คัดสรรมาเพื่อคุณ</span><h2>สูตรอาหารแนะนำ</h2><p>เมนูทำง่ายที่ช่วยเติมไอเดียให้มื้อถัดไปของคุณ</p></div>
+          <div class="recipe-controls"><input id="searchInput" type="search" placeholder="ค้นหาสูตรอาหาร..." aria-label="ค้นหาสูตรอาหาร"><select id="categoryFilter" aria-label="หมวดหมู่"><option value="">ทุกหมวดหมู่</option></select><button class="icon-btn" id="clearBtn" title="ล้างการค้นหา">↻</button></div>
+        </div>
+        <div class="recipe-grid" id="recipeGrid"></div>
+        <div class="empty hidden" id="emptyState"><div>🍽️</div><h3>ไม่พบสูตรอาหาร</h3><p>ลองค้นหาด้วยคำอื่น หรือเพิ่มสูตรอาหารของคุณเอง</p></div>
+        <div class="center"><button class="btn btn-outline" id="showAllBtn">ดูสูตรอาหารทั้งหมด <span>→</span></button></div>
+      </div>
+    </section>
+
+    <section class="how section" id="how">
+      <div class="container">
+        <div class="center-head"><span class="kicker">ใช้งานง่าย</span><h2>วิธีใช้งาน Recipe Box</h2><p>ทุกอย่างที่ช่วยเปลี่ยนจาก “วันนี้ทำอะไรกินดี?” ให้กลายเป็น “มื้ออาหารพร้อมแล้ว”</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-num">01</span><div class="step-icon">🔎</div><h3>ค้นหา</h3><p>ค้นหาสูตรอาหารจากชื่อ วัตถุดิบ หรือหมวดหมู่</p></article>
+          <article class="step-card featured-step"><span class="step-num">02</span><div class="step-icon">🥣</div><h3>ลงมือทำ</h3><p>เปิดสูตรอาหารแล้วทำตามวัตถุดิบและขั้นตอนแบบเข้าใจง่าย</p></article>
+          <article class="step-card"><span class="step-num">03</span><div class="step-icon">❤️</div><h3>แบ่งปัน</h3><p>เพิ่มสูตรอาหารของคุณและสร้างคลังสูตรอาหารส่วนตัว</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits section">
+      <div class="container">
+        <div class="center-head"><span class="kicker">ทำไมต้อง Recipe Box?</span><h2>วางแผนน้อยลง สนุกกับการทำอาหารมากขึ้น</h2></div>
+        <div class="benefit-grid">
+          <article><div>⚡</div><h3>รวดเร็วและใช้งานได้จริง</h3><p>สูตรอาหารพร้อมขั้นตอนชัดเจนและเวลาทำอาหารที่เหมาะกับชีวิตประจำวัน</p></article>
+          <article><div>🧺</div><h3>วัตถุดิบไม่ซับซ้อน</h3><p>ทำเมนูอร่อยได้โดยไม่ต้องเตรียมรายการซื้อของที่ยุ่งยาก</p></article>
+          <article><div>📚</div><h3>จัดสูตรอาหารเป็นระเบียบ</h3><p>เก็บไอเดียเมนูโปรดไว้ในที่เดียว พร้อมค้นหาได้ง่าย</p></article>
+          <article><div>✨</div><h3>สร้างแรงบันดาลใจ</h3><p>ค้นพบเมนูใหม่ ๆ และหาเมนูประจำจานต่อไปของคุณ</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories section" id="categories">
+      <div class="container">
+        <div class="section-head"><div><span class="kicker">เลือกดูในแบบที่คุณชอบ</span><h2>เลือกตามหมวดหมู่</h2></div><button class="btn btn-outline" id="allCategoriesBtn">ดูทั้งหมด <span>→</span></button></div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="quote-section section">
+      <div class="container quote-wrap">
+        <div class="quote-mark">“</div>
+        <blockquote>อาหารอร่อยไม่จำเป็นต้องทำยาก แค่มีแรงบันดาลใจดี ๆ สักนิดก็พอ</blockquote>
+        <div class="quote-person"><div class="avatar">👩🏻‍🍳</div><div><strong>Recipe Box Community</strong><span>คนทำอาหารที่บ้าน คนรักอาหาร และมือใหม่ที่อยากลองทำอาหาร</span></div></div>
+      </div>
+    </section>
+
+    <section class="cta section">
+      <div class="container cta-card">
+        <div><span class="kicker">YOUR KITCHEN, YOUR สูตรอาหารS</span><h2>มีสูตรอาหารเด็ด ๆ อยากแบ่งปันไหม?</h2><p>เพิ่มสูตรลงใน Recipe Box แล้วทำให้คลังสูตรอาหารของคุณน่าสนใจยิ่งขึ้น</p></div>
+        <button class="btn btn-dark btn-lg" id="ctaAddBtn">＋ เพิ่มสูตรอาหารของคุณ</button>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq">
+      <div class="container faq-grid">
+        <div><span class="kicker">เรื่องที่ควรรู้</span><h2>คำถามที่พบบ่อย</h2><p>รวมคำตอบเกี่ยวกับการใช้งาน Recipe Box</p></div>
+        <div class="faq-list">
+          <details open><summary>สามารถเพิ่มสูตรอาหารของตัวเองได้ไหม?</summary><p>ได้เลย กดปุ่มเพิ่มสูตรอาหาร แล้วกรอกหมวดหมู่ วัตถุดิบ ขั้นตอน และเวลาทำอาหาร</p></details>
+          <details><summary>สามารถแก้ไขสูตรอาหารภายหลังได้ไหม?</summary><p>ได้ ทุกสูตรรองรับการจัดการแบบ CRUD ได้แก่ ดู เพิ่ม แก้ไข และลบ</p></details>
+          <details><summary>สามารถค้นหาจากวัตถุดิบได้ไหม?</summary><p>ได้ ช่องค้นหาจะค้นจากชื่อสูตร หมวดหมู่ และข้อความในรายการวัตถุดิบ</p></details>
+          <details><summary>Recipe Box ใช้ API ภายนอกหรือไม่?</summary><p>ไม่ใช้ โปรเจกต์นี้สร้างและใช้งาน Express REST API ของตัวเองตามข้อกำหนดของ Mini โปรเจกต์</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-top"><div class="footer-brand"><a class="logo" href="#home"><span>🍳</span> Recipe Box</a><p>พื้นที่เรียบง่ายสำหรับเก็บสูตรอาหารที่คุณชอบทำและอยากแบ่งปัน</p></div><div><h4>เมนู</h4><a href="#recipes">สูตรอาหาร</a><a href="#categories">หมวดหมู่</a><a href="#how">วิธีใช้งาน</a></div><div><h4>ช่วยเหลือ</h4><a href="#faq">คำถามที่พบบ่อย</a><a href="#home">เกี่ยวกับ Recipe Box</a><a href="#home">ติดต่อเรา</a></div><div><h4>โปรเจกต์</h4><a href="#home">REST API</a><a href="#recipes">CRUD สูตรอาหาร</a><a href="#home">พร้อมสำหรับ GitHub</a></div></div><div class="container footer-bottom"><span>© 2026 Recipe Box. พัฒนาด้วย Node.js + Express</span><span>Made for your Mini โปรเจกต์.</span></div></footer>
+
+  <div class="modal hidden" id="modal"><div class="modal-card"><button class="close" id="closeModal">×</button><span class="kicker">สูตรอาหาร EDITOR</span><h2 id="modalTitle">เพิ่มสูตรอาหาร</h2><p class="modal-subtitle">สร้างสูตรอาหารที่คุณจะดีใจที่เก็บไว้ใช้ในอนาคต</p><form id="recipeForm"><input type="hidden" id="recipeId"><div class="form-grid"><div class="field full"><label for="name">ชื่อสูตรอาหาร *</label><input id="name" required placeholder="เช่น พาสต้ากระเทียมเนย"></div><div class="field"><label for="category">หมวดหมู่ *</label><input id="category" list="categoryOptions" required placeholder="เช่น เมนูเส้น"><datalist id="categoryOptions"><option value="อาหารจานเดียว"><option value="ต้ม"><option value="ผัด"><option value="ทอด"><option value="เส้น"><option value="ยำ"><option value="ของหวาน"><option value="เครื่องดื่ม"></datalist></div><div class="field"><label for="time">เวลา (นาที)</label><input id="time" type="number" min="1" value="20"></div><div class="field full"><label for="imageInput">รูปอาหาร <span>JPG, PNG, WEBP, GIF · ไม่บังคับ</span></label><input type="hidden" id="imageData"><input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden><div class="upload-box" id="uploadBox" tabindex="0" role="button" aria-label="เลือกรูปจากเครื่อง"><div class="upload-empty" id="uploadEmpty"><span class="upload-icon">📷</span><strong>เลือกรูปจากเครื่อง</strong><small>คลิก หรือลากไฟล์มาวางที่นี่</small></div><div class="upload-preview hidden" id="uploadPreview"><img id="previewImg" alt="ตัวอย่างรูปอาหาร"><div class="upload-actions"><button type="button" class="btn btn-light" id="changeImageBtn">เปลี่ยนรูป</button><button type="button" class="btn btn-light" id="removeImageBtn">ลบรูป</button></div></div></div></div><div class="field full"><label for="ingredients">วัตถุดิบ * <span>ใส่ทีละรายการต่อ 1 บรรทัด</span></label><textarea id="ingredients" rows="6" required></textarea></div><div class="field full"><label for="steps">วิธีทำ *</label><textarea id="steps" rows="7" required></textarea></div></div><div id="formError" class="form-error hidden"></div><div class="form-actions"><button type="button" class="btn btn-light" id="cancelBtn">ยกเลิก</button><button class="btn btn-dark" type="submit">บันทึกสูตรอาหาร</button></div></form></div></div>
+  <div class="modal hidden" id="detailModal"><div class="modal-card detail-card"><button class="close" id="closeDetail">×</button><div id="detailContent"></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
